@@ -2,15 +2,35 @@
 
 import unittest
 import char
+import weapon
+import playerClass
 
-class TestSequenceFunctions(unittest.TestCase):
+class TestPlayerClass(unittest.TestCase):
+"""
+    Unit Tests for the playerClass class 
+"""
+    def setUp(self):
+        self.testClass = playerClass.PlayerClass()
 
+    def test_saves(self):
+        self.testClass
+
+class TestWeapon(unittest.TestCase):
+"""
+    Unit Tests for the weapon class
+"""
+    def setUp(self):
+        self.testWeapon = weapon.Weapon()
+
+class TestChar(unittest.TestCase):
+"""
+    Unit Test for the player class
+"""
     def setUp(self):
         self.testPlayer = char.Player(s = 15, d = 18, c = 20,\
                                       i = 10, w = 12, C = 8 )
-        self.testWeapon = char.Weapon()
 
-    def test_setup(self):
+    def test___init__(self):
         self.assertEqual( self.testPlayer.stats['str'], 15 )
         self.assertEqual( self.testPlayer.stats['dex'], 18 )
         self.assertEqual( self.testPlayer.stats['con'], 20 )
@@ -22,6 +42,8 @@ class TestSequenceFunctions(unittest.TestCase):
         self.assertIsInstance( self.testPlayer.stats, dict )
         self.assertIsInstance( self.testPlayer.saves, dict )
         self.assertIsInstance( self.testPlayer.weapons, list )
+
+        self.assertEqual( self.testPlayer.level, 1 )
 
     def test_calcBonus(self):
         self.assertEqual( self.testPlayer.calcBonus(19), 4 )
