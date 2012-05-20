@@ -2,25 +2,6 @@
 
 import unittest
 import char
-import weapon
-import playerClass
-
-class TestPlayerClass(unittest.TestCase):
-"""
-    Unit Tests for the playerClass class 
-"""
-    def setUp(self):
-        self.testClass = playerClass.PlayerClass()
-
-    def test_saves(self):
-        self.testClass
-
-class TestWeapon(unittest.TestCase):
-"""
-    Unit Tests for the weapon class
-"""
-    def setUp(self):
-        self.testWeapon = weapon.Weapon()
 
 class TestChar(unittest.TestCase):
 """

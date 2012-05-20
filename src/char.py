@@ -1,5 +1,3 @@
-#!/usr/bin/env python
-
 import math
 
 class Player:
@@ -22,8 +20,9 @@ class Player:
 
     weapons = []
 
+    level = 1
+
     def __init__( self, s = 10, d = 10, c = 20, i = 10, w = 10, C = 10 ):
-        pass
         self.stats['str'] = s
         self.stats['dex'] = d
         self.stats['con'] = c
@@ -48,6 +47,3 @@ class Player:
 
     def calcBonus(self, x):
         return math.ceil( (x - 10)/2 )
-
-class Weapon:
-    pass
